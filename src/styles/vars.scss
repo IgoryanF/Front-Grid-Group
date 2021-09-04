@@ -1,0 +1,20 @@
+$white: #FFFFFF;
+$yellow-button: #FAFF09;
+$black: #000000;
+$black-button-text: #F2F2F2;
+$gray: #333333;
+$gray2: #4F4F4F;
+$works-description: #E0E0E0;
+
+$works1-description: #EB5757;
+$works2-description: #E7D0D0;
+$works3-description: #F9F3E6;
+$works4-description: #828282;;
+
+%title-text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 80px;
+  line-height: 94px;
+  color: $black-button-text;
+}
