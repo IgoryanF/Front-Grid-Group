@@ -1,22 +1,23 @@
 import React from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import SwiperCore, {Autoplay, EffectFade} from 'swiper';
-import 'swiper/swiper.min.css';
-import "swiper/components/effect-fade/effect-fade.min.css";
+import 'swiper/swiper.scss';
+import "swiper/components/effect-fade/effect-fade.scss";
+import './swiper.scss';
 
 SwiperCore.use([Autoplay, EffectFade]);
 
 const Carousel = ({ images }) => {
     return (
         <Swiper
+            spaceBetween={0}
             effect={'fade'}
             loop={true}
-            centeredSlides={true}
             autoplay={{
                 "delay": 3000,
                 "disableOnInteraction": false
             }}
-            className="mySwiper"
+            className="swiper-container"
         >
             {images.map(image =>
                 <SwiperSlide key={image}>
