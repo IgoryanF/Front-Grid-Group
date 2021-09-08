@@ -1,0 +1,192 @@
+@import "../../../styles/vars";
+
+.mainTop {
+
+  max-width: 100%;
+  height: 100vh;
+  position: relative;
+
+  &__titleContent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    display: block;
+    @extend %title-text;
+    margin-bottom: 193px;
+  }
+
+  &__links {
+    display: flex;
+
+    > a {
+      display: flex;
+      color: $white;
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 28px;
+      border: 1px solid #C4C4C4;
+      width: 348px;
+      height: 77px;
+      text-align: center;
+      background: rgba(17, 17, 17, 0.6);
+      transition: background, .3s ease;
+      justify-content: center;
+      align-items: center;
+    }
+
+    > a:hover {
+      background: rgba(17, 17, 17, 0.9);
+    }
+
+    > a + a {
+      margin-left: 50px;
+    }
+  }
+
+}
+
+.container {
+  max-width: calc(100% - 40px);
+  margin: 0 auto;
+  padding-top: 45px;
+  padding-bottom: 52px;
+}
+
+.description {
+
+  &__content {
+    padding-top: 37px;
+    background: $black-button-text;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    > :nth-child(1) > p {
+      max-width: 345px;
+    }
+
+    > :nth-child(2) > p {
+      max-width: 340px;
+    }
+
+    > :nth-child(3) > p {
+      max-width: 356px;
+    }
+
+    > :nth-child(4) > p {
+      max-width: 245px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item + &__item {
+    margin-left: 30px;
+  }
+
+  &__title {
+    @extend %description-title;
+    margin-bottom: 7px;
+  }
+
+  &__subtitle {
+    @extend %description-subtitle;
+    position: relative;
+    padding-left: 31px;
+    margin-bottom: 16px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      background-image: url("../../../assets/mainPage/rectangle15.png");
+      top: 0;
+      left: 4px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__info {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #0E0E0E;
+    padding-left: 31px;
+
+  }
+}
+
+.projectCost {
+
+  margin-top: 40px;
+  background: $content;
+
+  &__title {
+    @extend %section-text;
+    margin-bottom: 80px;
+  }
+
+  &__container {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__leftBlock,
+  &__rightBlock {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__leftBlock > h4 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 38px;
+    color: $black;
+    margin-bottom: 35px;
+  }
+
+  &__leftBlock > h5 {
+    font-weight: 300;
+    font-size: 29px;
+    color: $gray;
+    margin-bottom: 105px;
+  }
+
+  &__leftBlock > button {
+    @extend %button-reset;
+    width: 405px;
+    height: 75px;
+    background: $black;
+    color: #FFFFFF;
+    font-weight: 300;
+    border: 1px solid #000000;
+    font-size: 30px;
+    transition: all .3s ease;
+    &:hover {
+      background: #535353;
+      border: 1px solid #535353;
+    }
+  }
+
+  .line {
+    @extend %line;
+    margin-top: 34px;
+  }
+
+}

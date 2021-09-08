@@ -5,11 +5,12 @@ $black-button-text: #F2F2F2;
 $gray: #333333;
 $gray2: #4F4F4F;
 $works-description: #E0E0E0;
+$content: #EEEEEE;
 
 $works1-description: #EB5757;
 $works2-description: #E7D0D0;
 $works3-description: #F9F3E6;
-$works4-description: #828282;;
+$menu-link: #828282;;
 
 %title-text {
   font-style: normal;
@@ -17,4 +18,56 @@ $works4-description: #828282;;
   font-size: 80px;
   line-height: 94px;
   color: $black-button-text;
+}
+
+%description-title {
+  font-size: 64px;
+  line-height: 75px;
+  color: #0E0E0E;
+}
+
+%description-subtitle {
+  font-size: 28px;
+  line-height: 33px;
+  color: #0E0E0E;
+}
+
+%menu-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 32px;
+  color: $menu-link;
+}
+
+
+%section-text {
+  font-style: normal;
+  font-weight: 300;
+  padding-left: 60px;
+  position: relative;
+  font-size: 38px;
+  color: $black;
+  &::after {
+    position: absolute;
+    content: "";
+    height: 10px;
+    left: 0;
+    top: 56px;
+    width: 200px;
+    background: $black;
+  }
+}
+
+%button-reset {
+  display: block;
+  cursor: pointer;
+}
+
+%line {
+  border: 1px solid #BDBDBD;
+  width: 100%;
 }
