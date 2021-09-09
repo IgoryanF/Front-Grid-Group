@@ -1,7 +1,7 @@
 import './App.css';
 import {Route} from "react-router-dom";
 import MainPage from "./components/pages/Main/MainPage";
-import Header from "./components/pages/Main/Header";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {

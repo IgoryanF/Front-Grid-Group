@@ -139,7 +139,7 @@
   }
 
   &__container {
-    max-width: 60%;
+    max-width: 75%;
     margin: 0 auto;
   }
 
@@ -151,12 +151,16 @@
   &__rightBlock {
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
   }
 
   &__leftBlock > h4 {
     font-style: normal;
     font-weight: normal;
-    font-size: 38px;
+    margin-right: 25px;
+    width: 680px;
+    line-height: 45px;
+    font-size: 39px;
     color: $black;
     margin-bottom: 35px;
   }
@@ -164,6 +168,7 @@
   &__leftBlock > h5 {
     font-weight: 300;
     font-size: 29px;
+    line-height: 38px;
     color: $gray;
     margin-bottom: 105px;
   }
@@ -182,6 +187,48 @@
       background: #535353;
       border: 1px solid #535353;
     }
+  }
+
+  //&__image {
+  //  background-image: url("../../../assets/mainPage/Rectangle56.png");
+  //  background-repeat: no-repeat;
+  //  background-position: center;
+  //  background-size: cover;
+  //  margin-bottom: 28px;
+  //}
+
+  &__rightBlock > span {
+    font-size: 29px;
+    font-weight: normal;
+    color: $black;
+    margin-bottom: 20px;
+  }
+
+  &__rightBlock > p {
+    font-size: 29px;
+    font-weight: 300;
+    line-height: 147.19%;
+    position: relative;
+    padding-left: 32px;
+
+    + p {
+      margin-top: 25px;
+      width: 450px;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 14px;
+      height: 18px;
+      width: 18px;
+      background: #0E0E0E;
+    }
+  }
+
+  &__text {
+    width: 340px;
   }
 
   .line {

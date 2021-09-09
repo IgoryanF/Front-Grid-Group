@@ -1,5 +1,5 @@
-import React from 'react';
-import NavBar from "../../UI/navbar/NavBar";
+import React, {useEffect, useRef} from 'react';
+import NavBar from "./UI/navbar/NavBar";
 import styles from './header.module.scss'
 
 const Header = () => {

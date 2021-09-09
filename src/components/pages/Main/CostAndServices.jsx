@@ -13,9 +13,12 @@ const CostAndServices = () => {
                         <button>Узнать стоимость</button>
                     </div>
                     <div className={styles.projectCost__rightBlock}>
+                        <picture>
+                            <img src="../../../assets/mainPage/Rectangle56.png"/>
+                        </picture>
                         <span>Бонусы:</span>
-                        <p>чек листы на 5 ошибок в строительстве</p>
-                        <p>5 трендов 2021 года на дизайн интерьеров</p>
+                        <p className={styles.projectCost__text}>чек листы на 5 ошибок в строительстве</p>
+                        <p className={styles.projectCost__text}>5 трендов 2021 года на дизайн интерьеров</p>
                     </div>
                 </div>
             </div>
