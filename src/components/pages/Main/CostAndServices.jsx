@@ -1,5 +1,9 @@
 import React from 'react';
-import styles from './MainPage.module.scss'
+import styles from './MainPage.module.scss';
+import bigImage from '../../../assets/mainPage/Rectangle56.png';
+import smallImage from '../../../assets/mainPage/Rectangle165.png';
+
+
 
 const CostAndServices = () => {
     return (
@@ -13,9 +17,14 @@ const CostAndServices = () => {
                         <button>Узнать стоимость</button>
                     </div>
                     <div className={styles.projectCost__rightBlock}>
-                        <picture>
-                            <img src="../../../assets/mainPage/Rectangle56.png"/>
-                        </picture>
+                        <div className={styles.imageWrapper}>
+                            <div>
+                                <picture>
+                                    <img className={styles.bigImage} src={bigImage} alt={''}/>
+                                    <img className={styles.smallImage} src={smallImage} alt={''}/>
+                                </picture>
+                            </div>
+                        </div>
                         <span>Бонусы:</span>
                         <p className={styles.projectCost__text}>чек листы на 5 ошибок в строительстве</p>
                         <p className={styles.projectCost__text}>5 трендов 2021 года на дизайн интерьеров</p>
@@ -23,6 +32,7 @@ const CostAndServices = () => {
                 </div>
             </div>
             <div className={styles.line}/>
+
         </section>
     );
 };

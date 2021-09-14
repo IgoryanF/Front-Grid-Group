@@ -1,0 +1,133 @@
+@import "../../../styles/vars";
+
+.modal {
+  visibility: hidden;
+  transform: translateX(100%);
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(19, 19, 19, 0.9);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .4s ease;
+  }
+
+  &__content {
+    width: 55%;
+    height: 60%;;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  &__closeButton {
+    width: 36px;
+    height: 36px;
+    @extend %button-reset;
+    border: none;
+    background: transparent;
+    position: absolute;
+    top: 6%;
+    right: 6%;
+
+    &::before {
+      @extend %close-line;
+      transform: rotate(135deg);
+    }
+
+    &::after {
+      @extend %close-line;
+      transform: rotate(45deg);
+    }
+
+    &:hover {
+
+      &::before {
+        @extend %close-line;
+        transform: rotate(135deg);
+        background-color: gray;
+      }
+
+      &::after {
+        @extend %close-line;
+        transform: rotate(45deg);
+        background-color: gray;
+        color: #1976d2;
+      }
+    }
+  }
+
+  &__title {
+    @extend %description-subtitle;
+    color: $black;
+    margin-bottom: 40px;
+  }
+
+  &__form {
+    width: 57%;
+    display: flex;
+    flex-direction: column;
+
+    > :nth-child(1),
+    > :nth-child(2) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__focusedInputContainer {
+    >:nth-child(1) {
+      color: #1976d2 !important;
+    }
+  }
+
+  &__inputPhone {
+    width: 100% !important;
+    border: 2px solid $black !important;
+    border-radius: 0 !important;
+
+    &:hover {
+      border-color: 1px solid $black !important;
+    }
+
+    &:focus {
+      border-color: transparent !important;
+      box-shadow: 0 0 0 2px #1976d2 !important;
+    }
+  }
+
+  fieldset {
+    border: 2px solid $black;
+    border-radius: 0;
+  }
+
+  &__button {
+    @extend %button-reset;
+    height: 80px;
+    margin-top: 10px;
+    width: 100%;
+    background-color: $yellow-button;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 42px;
+    color: $black;
+  }
+
+}

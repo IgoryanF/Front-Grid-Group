@@ -1,20 +1,35 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './MainPage.module.scss';
 import {NavLink} from 'react-router-dom';
 import CarouselContainer from "../../UI/swiper/CarouselContainer";
+import {NavbarActiveContext} from "../../../context/navbarActiveContext";
 
 const MainTitle = () => {
+
+    const { isModalActive, setIsModalActive } = useContext(NavbarActiveContext);
 
     return (
         <>
             <section className={styles.mainTop}>
                 <div className={styles.mainTop__titleContent}>
                     <div>
-                        <span className={styles.mainTop__title}>Лучшее для лучших</span>
+                        <span className={isModalActive
+                            ? styles.mainTop__title + ' ' + styles.hidden : styles.mainTop__title}
+                        >
+                            Лучшее для лучших
+                        </span>
                     </div>
                     <div className={styles.mainTop__links}>
-                        <NavLink to="/projects">Проекты</NavLink>
-                        <NavLink to="/calculator">Рассчитать стоимость</NavLink>
+                        <NavLink to="/projects" className={isModalActive
+                            ? styles.linkHidden : null}
+                        >
+                            Проекты
+                        </NavLink>
+                        <NavLink to="/calculator" className={isModalActive
+                            ? styles.linkHidden : null}
+                        >
+                            Рассчитать стоимость
+                        </NavLink>
                     </div>
                 </div>
                 <CarouselContainer/>

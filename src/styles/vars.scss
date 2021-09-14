@@ -64,10 +64,33 @@ $menu-link: #828282;;
 
 %button-reset {
   display: block;
+  outline: none;
   cursor: pointer;
 }
 
+%link-reset {
+  text-decoration: none;
+  display: block;
+}
+
 %line {
-  border: 1px solid #BDBDBD;
+  border: 0.5px solid #BDBDBD;
   width: 100%;
+}
+
+%social-links {
+  display: block;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+%close-line {
+  position: absolute;
+  content: "";
+  width: 36px;
+  height: 4px;
+  left: 0;
+  background-color: $gray2;
 }

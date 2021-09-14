@@ -102,6 +102,13 @@
         transition: box-shadow, width .4s ease;
     }
 
+    &__item.activeLink {
+        box-shadow: inset 0 0 0 1px $black-button-text;
+        width: fit-content;
+        font-weight: normal;
+        color: $black-button-text;
+    }
+
     &__item:hover {
         box-shadow: inset 0 0 0 1px $black-button-text;
         width: fit-content;
@@ -117,16 +124,23 @@
     margin-top: 20px;
     justify-content: space-between;
 
+    > :nth-child(1),
+    > :nth-child(5) {
+        display: flex;
+        background-color: #BDBDBD;
+        border-radius: 5px;
+        height: 41px;
+        width: 41px;
+        justify-content: center;
+        align-items: center;
+    }
+
     &__links {
 
     }
 
     &__icon {
-        display: block;
-        transition: all 0.3s ease;
-        &:hover {
-           transform: scale(1.1);
-        }
+        @extend %social-links;
     }
 }
 

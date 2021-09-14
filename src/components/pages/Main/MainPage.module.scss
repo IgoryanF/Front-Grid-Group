@@ -21,6 +21,12 @@
     display: block;
     @extend %title-text;
     margin-bottom: 193px;
+    transition: all .3s ease;
+  }
+
+  &__title.hidden {
+    opacity: 0;
+    transition: all .3s ease;
   }
 
   &__links {
@@ -50,6 +56,10 @@
     > a + a {
       margin-left: 50px;
     }
+  }
+
+  .linkHidden {
+    opacity: 0;
   }
 
 }
@@ -131,7 +141,6 @@
 .projectCost {
 
   margin-top: 40px;
-  background: $content;
 
   &__title {
     @extend %section-text;
@@ -147,6 +156,26 @@
     display: flex;
   }
 
+  &__leftBlock {
+    width: 60%;
+    margin-right: 25px;
+  }
+
+  &__rightBlock {
+    width: calc(40% - 25px);
+    position: relative;
+    padding-bottom: 30px;
+
+    &::before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 55px;
+      bottom: 0;
+      border: 0.5px solid #BDBDBD;
+    }
+  }
+
   &__leftBlock,
   &__rightBlock {
     display: flex;
@@ -157,8 +186,6 @@
   &__leftBlock > h4 {
     font-style: normal;
     font-weight: normal;
-    margin-right: 25px;
-    width: 680px;
     line-height: 45px;
     font-size: 39px;
     color: $black;
@@ -189,14 +216,6 @@
     }
   }
 
-  //&__image {
-  //  background-image: url("../../../assets/mainPage/Rectangle56.png");
-  //  background-repeat: no-repeat;
-  //  background-position: center;
-  //  background-size: cover;
-  //  margin-bottom: 28px;
-  //}
-
   &__rightBlock > span {
     font-size: 29px;
     font-weight: normal;
@@ -213,7 +232,6 @@
 
     + p {
       margin-top: 25px;
-      width: 450px;
     }
 
     &::before {
@@ -227,13 +245,147 @@
     }
   }
 
+  .imageWrapper {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    > div {
+      width: 100%;
+      padding-bottom: 57%;
+    }
+  }
+
+  &__rightBlock .bigImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+  }
+
+  &__rightBlock .smallImage {
+    position: absolute;
+    top: 0;
+    left: 63%;
+    width: 14%;
+    height: 20%;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+  }
+
   &__text {
     width: 340px;
   }
 
-  .line {
-    @extend %line;
-    margin-top: 34px;
+}
+
+//
+.services {
+
+  position: relative;
+  overflow: hidden;
+
+  > :nth-child(1) {
+    position: absolute;
+    top: 85px;
+    left: 0;
   }
 
+  &__title {
+    position: absolute;
+    z-index: 5;
+    min-width: 100vw;
+    @extend %section-text;
+  }
+
+  &__container {
+    max-width: 91%;
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    width: 100%;
+    box-shadow: 0 0 0 1px #BDBDBD;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+
+  &__item {
+    padding-top: 220px;
+    width: calc(100% / 4);
+    box-shadow: 0 0 0 1px #E0E0E0;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 35px;
+  }
+
+  &__wrapperImage {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 70px;
+
+    > div {
+      width: 100%;
+      padding-bottom: 112%;
+    }
+  }
+
+  &__itemImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__itemTitle {
+    font-weight: 500;
+    font-size: 45px;
+    line-height: 56px;
+    margin-bottom: 23px;
+    color: #0E0E0E;
+    padding-left: 10px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      left: -3px;
+      top: -20px;
+      height: 20px;
+      background-color: $gray2;
+    }
+  }
+
+  &__itemInfo {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 147.19%;
+    color: $gray2;
+    padding-left: 12px;
+    max-width: 294px;
+  }
+
+}
+
+
+
+
+.line {
+  @extend %line;
+  position: relative;
+  z-index: 1;
 }

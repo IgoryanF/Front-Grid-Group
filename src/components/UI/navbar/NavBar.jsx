@@ -1,15 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styles from './navbar.module.scss'
 import MenuModal from "./MenuModal";
 import {Link} from "react-router-dom";
+import {NavbarActiveContext} from "../../../context/navbarActiveContext";
+import CallMeModalContainer from "../callMeModal/CallMeModalContainer";
 
 const NavBar = () => {
 
-    const [isModalActive, setIsModalActive] = useState(false);
     const [status, setStatus] = useState('closed');
+    const [isCallModalActive, setIsCallModalActive] = useState(false);
+
+    const { isModalActive, setIsModalActive } = useContext(NavbarActiveContext);
 
     const changeMenuStatus = () => {
         setIsModalActive(prevState => !prevState);
+    }
+
+    const changeCallModalStatus = () => {
+        setIsCallModalActive(prevState => !prevState)
     }
 
     useEffect(() => {
@@ -42,8 +50,12 @@ const NavBar = () => {
                     </svg>
                 </Link>
             </div>
+            <CallMeModalContainer active={isCallModalActive} changeCallModalStatus={changeCallModalStatus} />
             <button
-                className={styles.navbar__item + ' ' + styles.phone}/>
+                type="button"
+                className={styles.navbar__item + ' ' + styles.phone}
+                onClick={() => changeCallModalStatus()}
+            />
         </div>
     );
 };
