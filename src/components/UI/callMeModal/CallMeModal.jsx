@@ -53,7 +53,6 @@ const CallMeModal = (props) => {
                     />
                     <button
                         className={styles.modal__button}
-                        type="submit"
                     >Позвонить мне
                     </button>
                 </form>

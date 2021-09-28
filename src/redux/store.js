@@ -1,11 +1,8 @@
-import {applyMiddleware, combineReducers, createStore} from "redux";
-import {callMeReducer} from "./reducers/callMeReducer";
-import thunkMiddleware from 'redux-thunk';
+import {configureStore} from "@reduxjs/toolkit";
+import {rootReducer} from "./reducers/rootReducer";
 
-let rootReducer = combineReducers({
-    callMeReducer: callMeReducer
-})
-
-let store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
+let store = configureStore({
+    reducer: rootReducer
+});
 
 export default store;

@@ -5,9 +5,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import {NavbarActiveContext} from "./context/navbarActiveContext";
 import {useState} from "react";
-import {Provider} from "react-redux";
-import store from "./redux/store";
-import {TextField} from "@material-ui/core";
+import Project from "./components/pages/Project/Project";
 
 function App() {
 
@@ -15,15 +13,14 @@ function App() {
 
     return (
         <div className="wrapper">
-            <Provider store={store}>
             <NavbarActiveContext.Provider value={{isModalActive, setIsModalActive}}>
                 <Header/>
                 <main className="main">
-                    <Route path="/main" render={() => <MainPage/>} exact/>
+                    <Route path="/" render={() => <MainPage/>} exact/>
+                    <Route path="/projects/:id" render={() => <Project/>} exact/>
                 </main>
                 <Footer/>
             </NavbarActiveContext.Provider>
-            </Provider>
         </div>
     );
 }
