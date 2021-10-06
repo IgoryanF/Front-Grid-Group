@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {Image, ImageWrapper} from "../../UI/steledComponents/Styled";
+import {Image, ImageWrapper} from "../../UI/styledComponents/Styled";
 import {NavLink} from "react-router-dom";
 
 const ProjectItemContainer = styled.div`

@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import {NavbarActiveContext} from "./context/navbarActiveContext";
 import {useState} from "react";
 import Project from "./components/pages/Project/Project";
+import ProjectsPage from "./components/pages/Projects/ProjectsPage";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
                 <main className="main">
                     <Route path="/" render={() => <MainPage/>} exact/>
                     <Route path="/projects/:id" render={() => <Project/>} exact/>
+                    <Route path="/projects" exact render={() => <ProjectsPage/>}/>
                 </main>
                 <Footer/>
             </NavbarActiveContext.Provider>

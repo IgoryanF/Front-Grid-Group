@@ -2,9 +2,8 @@ import React from 'react';
 import styles from './footer.module.scss';
 import bigImage from '../../assets/mainPage/footer_rect.png';
 import smallImage from '../../assets/mainPage/footer_rect_small.png';
-// import logo from '../../assets/mainPage/';
 
-const Footer = () => {
+const Footer = React.memo(() => {
     return (
         <footer className={styles.footer}>
             <div className={styles.footer__wrapper}>
@@ -116,6 +115,6 @@ const Footer = () => {
             </div>
         </footer>
     );
-};
+});
 
 export default Footer;

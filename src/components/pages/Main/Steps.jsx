@@ -9,7 +9,7 @@ import {
     Section,
     SectionTitle,
     TitleH3
-} from "../../UI/steledComponents/Styled";
+} from "../../UI/styledComponents/Styled";
 import image from "../../../assets/mainPage/check.svg";
 import arrow from "../../../assets/mainPage/arrow_long.png";
 
@@ -188,7 +188,7 @@ const Steps = () => {
                 <StepsContainer>
                     <StepsList>
                         <StepItem>
-                            <Flex>
+                            <Flex styles={ {width: "100%"} }>
                                 <StepNumber>01</StepNumber>
                                 <Flex styles={ {direction: "column"} }>
                                     <svg width="61" height="56" viewBox="0 0 61 56" fill="none"

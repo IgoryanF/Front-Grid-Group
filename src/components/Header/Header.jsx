@@ -8,7 +8,7 @@ const Header = () => {
     const location = useLocation();
 
     return (
-        <header className={location.pathname === "/main"
+        <header className={location.pathname === "/"
             ? styles.header + ' ' + styles.transparent : styles.header}>
             <div className={styles.header__container}>
                 <NavBar/>

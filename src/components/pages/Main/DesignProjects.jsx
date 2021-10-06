@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {Container, Section, SectionTitle} from "../../UI/steledComponents/Styled";
+import {Container, Section, SectionTitle} from "../../UI/styledComponents/Styled";
 import ProjectList from "./ProjectList";
 
 const BackBlock = styled.div`

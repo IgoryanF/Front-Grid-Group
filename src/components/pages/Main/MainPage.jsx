@@ -4,6 +4,7 @@ import CostAndServices from "./CostAndServices";
 import BasicServices from "./BasicServices";
 import DesignProjects from "./DesignProjects";
 import Steps from "./Steps";
+import GetCatalogToEmail from "./GetCatalogToEmail";
 
 const MainPage = () => {
     return (
@@ -13,6 +14,7 @@ const MainPage = () => {
             <BasicServices/>
             <DesignProjects/>
             <Steps/>
+            <GetCatalogToEmail/>
         </>
     );
 };

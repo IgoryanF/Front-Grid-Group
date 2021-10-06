@@ -3,7 +3,7 @@ import styles from './navbar.module.scss'
 import MenuModal from "./MenuModal";
 import {Link} from "react-router-dom";
 import {NavbarActiveContext} from "../../../context/navbarActiveContext";
-import CallMeModalContainer from "../callMeModal/CallMeModalContainer";
+import CallMeModal from "../callMeModal/CallMeModal";
 
 const NavBar = () => {
 
@@ -50,7 +50,7 @@ const NavBar = () => {
                     </svg>
                 </Link>
             </div>
-            <CallMeModalContainer active={isCallModalActive} changeCallModalStatus={changeCallModalStatus} />
+            <CallMeModal active={isCallModalActive} changeCallModalStatus={changeCallModalStatus} />
             <button
                 type="button"
                 className={styles.navbar__item + ' ' + styles.phone}

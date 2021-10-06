@@ -9,10 +9,24 @@ const FlexContainer = styled.div`
   flex-wrap: ${props => props.styles ? props.styles.wrap || "nowrap" : "nowrap"};
   justify-content: ${props => props.styles ? props.styles.justifyContent || "flex-start" : "flex-start"};
   align-items: ${props => props.styles ? props.styles.alignItems || "stretch" : "stretch"};
+  
+  ${({withLoadingButton}) => withLoadingButton && css`
+    > .MuiButton-root {
+      transition: all .3s ease;
+       &:hover {
+         background: #535353 !important;
+         border: 1px solid #535353 !important;
+       }
+      &[disabled] {
+        background: #535353 !important;;
+      }
+     }
+  `};
 `;
 
 //
 export const Flex = (props) => {
+
     return (
         <FlexContainer {...props}>
             {props.children}
@@ -26,6 +40,7 @@ export const Section = styled.section`
   overflow: hidden;
   width: 100%;
   margin-top: ${props => props.marginTop || 0};
+  margin-bottom: ${props => props.marginBottom || 0};
   ${props => props.shadow && css`
     box-shadow: 0 0 0 1px #bdbdbd;
   `};
@@ -144,6 +159,21 @@ export const TitleH3 = styled.h3`
   font-size: 48px;
   margin: ${({ style}) => style ? style.margin || 0 : 0};
   color: ${({ style }) => style ? style.color || "black" : "black"};
+`;
+
+export const TitleH4 = styled(TitleH3)`
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 146.69%;
+  position: relative;
+`;
+
+export const TitleH5 = styled(TitleH3)`
+  font-size: 24px;
+  line-height: 146.19%;
+  position: relative;
+  color: ${({ styles }) => styles ? styles.color || "black" : "black"};
+  margin: ${({ styles }) => styles ? styles.margin || 0 : 0};
 `;
 
 //

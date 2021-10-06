@@ -96,12 +96,31 @@
     >:nth-child(1) {
       color: #1976d2 !important;
     }
+
+    input {
+      background: white !important;
+    }
+  }
+
+
+  &__inputContainer {
+    margin: 25px 0 30px !important;
+    >:nth-child(1) {
+      font-size: 18px !important;
+      color: rgba(0, 0, 0, 0.6);
+      top: -9px !important;
+      left: 28px !important;
+      background: rgba(255, 255, 255, 0.95) !important;
+    }
   }
 
   &__inputPhone {
     width: 100% !important;
     border: 2px solid $black !important;
     border-radius: 0 !important;
+    height: 72px;
+    font-size: 24px !important;
+    background: transparent !important;
 
     &:hover {
       border-color: 1px solid $black !important;

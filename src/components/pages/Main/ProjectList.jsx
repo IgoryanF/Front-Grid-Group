@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
 import ProjectItem from "./ProjectItem";
 import styled, {css, keyframes} from "styled-components";
-import {changeCurrentPage, changeRerender, fetchProjects} from "../../../redux/reducers/projectsReducer";
+import {changeCurrentPage, clearData, fetchProjects} from "../../../redux/reducers/projectsReducer";
 import {Backdrop, CircularProgress} from "@material-ui/core";
 import {LoadingButton} from '@material-ui/lab'
 import {useDispatch, useSelector} from "react-redux";
+import {useLocation} from "react-router-dom";
 
 const LoadingIcon = () => {
     return (
@@ -109,25 +110,32 @@ const ListOfProjects = styled.div`
 `;
 
 
-const ProjectList = () => {
+const ProjectList = ({ limit = 6 }) => {
 
+    const location = useLocation();
 
     const dispatch = useDispatch();
 
-    const {isFetching, projectsData, totalPages, currentPage, isRerender} = useSelector(state => state.projects)
+    const { isFetching, projectsData, totalPages, currentPage } = useSelector(state => state.projects)
+
 
     useEffect(() => {
-        if (isRerender) {
-            dispatch(fetchProjects(currentPage));
-            dispatch(changeRerender(false));
+
+        const promise = dispatch(fetchProjects({ page: currentPage, limit }));
+
+        return () => {
+            promise.abort();
         }
-    }, [currentPage, dispatch, isRerender])
+    }, [currentPage, dispatch, limit]);
+
+    useEffect(() => {
+        return () => {
+            dispatch(clearData())
+        }
+    }, [location.pathname])
 
 
     const changePage = () => {
-        if (currentPage < totalPages) {
-            dispatch(changeRerender(true));
-        }
         dispatch(changeCurrentPage());
     }
 

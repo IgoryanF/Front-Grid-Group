@@ -5,7 +5,9 @@ const instance = axios.create({
 })
 
 export const projectsAPI = {
-    getProjects: async (page = 1, count = 6) => {
-        return await instance.get(`?page=${page}&count=${count}`);
+    getProjects: async (page = 1, limit, token) => {
+        return await instance.get(`?page=${page}&count=${limit}`, {
+            cancelToken: token
+        });
     }
 }
